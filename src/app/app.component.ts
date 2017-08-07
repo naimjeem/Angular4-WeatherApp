@@ -12,6 +12,7 @@ export class AppComponent {
 
   cityName = '';
   cityHumid = '';
+  location = '';
     searchCity() {
       this.http.get('http://api.openweathermap.org/data/2.5/weather?APPID=0ba5e82df49a15a79cec569618c56215&q=' + this.cityName )
       .subscribe (
@@ -19,6 +20,7 @@ export class AppComponent {
       const weatherCity = res.json();
       console.log(weatherCity);
       this.cityHumid = weatherCity.main.humidity;
+      this.location = weatherCity.name + ', ' + weatherCity.sys.country;
     });
   }
 }
