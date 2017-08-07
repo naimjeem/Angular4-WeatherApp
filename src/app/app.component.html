@@ -1,7 +1,22 @@
-<h2>Weather App</h2>
-<hr>
-<input type="text" [(ngModel)]="cityName">
-<button (click)="searchCity()">Search</button>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-6 align-middle">
+      <h2>Weather App</h2>
+      <hr>
+      <form (submit)="searchCity()">
+        <div class="form-group">
+          <input type="text" class="form-control" [(ngModel)]="cityName" name="cityName">
+        </div>
+      </form>
+      <strong>Humidity: </strong>
+      <h1>{{cityHumid}}</h1>
+    </div>
+  </div>
+</div>
+
 <br>
 
-<h1>Humidity: {{cityHumid}} </h1>
+
+
